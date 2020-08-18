@@ -1,14 +1,16 @@
 {% extends "kanban/base.html" %}
 
 {% block content %}
-<div class="container">
-  <h1 class="display-4">kanban</h1>
-  <p class="lead">kanbanでタスク管理をしてみましょう。</p>
-  <hr class="my-4">
-  <p>このアプリケーションはDjangoで作られています。</p>
+    <div class="container">
+        <h1 class="display-4">kanban</h1>
+        <p class="lead">kanbanでタスク管理をしてみましょう。</p>
+        <hr class="my-4">
+        <p>このアプリケーションはDjangoで作られています。</p>
 
-  <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">ログイン</a>
-  <a class="btn btn-primary btn-lg" href="{% url 'kanban:signup' %}" role="button">サインアップ</a>
+        <a class="btn btn-primary btn-lg" href="{% url 'login' %}"
+           role="button">ログイン</a>
+        <a class="btn btn-primary btn-lg" href="{% url 'kanban:signup' %}"
+           role="button">サインアップ</a>
 
-</div>
+    </div>
 {% endblock %}

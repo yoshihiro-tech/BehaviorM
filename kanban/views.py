@@ -8,7 +8,7 @@ from django.urls import reverse_lazy
 from django.views.generic import DetailView, UpdateView, CreateView, ListView, \
     DeleteView
 
-from .forms import UserUpdateForm, ListForm, CardForm, CardCreateFromHomeForm
+from .forms import UserForm, ListForm, CardForm, CardCreateFromHomeForm
 from .mixins import OnlyYouMixin
 from .models import List, Card
 
@@ -46,7 +46,7 @@ class UserDetailView(LoginRequiredMixin, DetailView):
 class UserUpdateView(OnlyYouMixin, UpdateView):
     model = User
     template_name = "kanban/users/update.html"
-    form_class = UserUpdateForm
+    form_class = UserForm
 
     def get_success_url(self):
         return resolve_url('kanban:users_detail', pk=self.kwargs['pk'])
